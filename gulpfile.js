@@ -19,7 +19,8 @@ var gulp = require('gulp'),
         mainSass: "scss/**/main.scss",
         mainJS: "js/app.js",
         js: "js/components/**.js",
-        bootstrap: 'bootstrap/dist/'
+        bootstrap: 'bootstrap/dist/',
+        vendor: 'vendor/A-OwlCarousel2-2.2.1/OwlCarousel2-2.2.1/'
     },
     sources = {
         assets: config.source + paths.assets,
@@ -30,7 +31,8 @@ var gulp = require('gulp'),
         js: config.source + paths.assets + paths.js,
         rootJS: config.source + paths.assets + paths.mainJS,
         bootstrapCSS: config.modules + paths.bootstrap + "css/bootstrap.min.css",
-        bootstrapJS: config.modules + paths.bootstrap + "js/bootstrap.min.js"
+        carouselJS: config.source + paths.assets + paths.vendor + "js/owl.carousel.min.js",
+        carouselCSS: config.source + paths.assets + paths.vendor + "css/**.css"
     };
 
 gulp.task('html', () => {
@@ -41,8 +43,9 @@ gulp.task("sass", () => {
     let sassfile = gulp.src(sources.rootSass)
         .pipe(sass({
             outputStyle: "compressed"
-        }).on("error", sass.logError));
-    let bootstrapcss = gulp.src(sources.bootstrapCSS);
+        }).on("error", sass.logError)),
+        bootstrapcss = gulp.src(sources.bootstrapCSS),
+        carouselcss = gulp.src(sources.carouselCSS);
 
     merge(sassfile, bootstrapcss)
         .pipe(concat("main.css"))

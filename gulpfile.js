@@ -44,11 +44,7 @@ gulp.task("sass", () => {
         .pipe(sass({
             outputStyle: "compressed"
         }).on("error", sass.logError))
-        //bootstrapcss = gulp.src(sources.bootstrapCSS),
-        //carouselcss = gulp.src(sources.carouselCSS);
-
-    //merge(sassfile, bootstrapcss)
-    .pipe(concat("main.css"))
+        .pipe(concat("main.css"))
         .pipe(gulp.dest(config.dist));
 });
 

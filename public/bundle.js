@@ -40,12 +40,13 @@ const header = () => {
 const mainNews = (update) => {
     const container = $('<section class="main-news"></section>'),
         wrap = $('<div class="container"></div>'),
-        nav = $('<nav class="main-news__navbar row"></nav>'),
+        nav = $('<nav class="main-news__navbar row hidden-xs hidden-sm"></nav>'),
+        latest = $('<h2></h2>'),
         list = $('<ul class="text-center"><li><a href="#">Lo último</a></li><li><a href="#">Opinión</a></li><li><a href="#">Cultura</a></li><li><a href="#">Perú</a></li><li><a href="#">Tecnología</a></li><li><a href="#">Mundo</a></li><li><a href="#">Economía</a></li><li><a href="#">Lifestyle</a></li><li><a href="#">Deporte</a></li></ul>'),
         news = $('<img class="img-responsive" src="assets/img/news-0.png" alt="news-1">'),
         box = $('<div class="info-box"></div>'),
-        title = $('<h2>MIT BUSCA ESTUDIANTES DE TODO EL MUNDO QUE QUIERAN ESTUDIAR GRATIS</h2>'),
-        info = $('<p>Ya no será necesario ir hasta el campus de MIT para estudiar allá, por medio de su curso gratuito en línea cualquiera podrá hacerlo.</p>');
+        title = $('<h3>MIT BUSCA ESTUDIANTES DE TODO EL MUNDO QUE QUIERAN ESTUDIAR GRATIS</h3>'),
+        info = $('<p class="hidden-xs hidden-sm">Ya no será necesario ir hasta el campus de MIT para estudiar allá, por medio de su curso gratuito en línea cualquiera podrá hacerlo.</p>');
 
     container.append(wrap);
     wrap.append(box);

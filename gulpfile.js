@@ -20,7 +20,7 @@ var gulp = require('gulp'),
         mainJS: "js/app.js",
         js: "js/components/**.js",
         bootstrap: 'bootstrap/dist/',
-        vendor: 'vendor/A-OwlCarousel2-2.2.1/OwlCarousel2-2.2.1/'
+        vendor: 'vendor/A - OwlCarousel2-2.2.1/OwlCarousel2-2.2.1/'
     },
     sources = {
         assets: config.source + paths.assets,
@@ -40,14 +40,14 @@ gulp.task('html', () => {
 });
 
 gulp.task("sass", () => {
-    let sassfile = gulp.src(sources.rootSass)
+    let sassfile = gulp.src([sources.rootSass, sources.bootstrapCSS, sources.carouselCSS])
         .pipe(sass({
             outputStyle: "compressed"
-        }).on("error", sass.logError)),
-        bootstrapcss = gulp.src(sources.bootstrapCSS),
-        carouselcss = gulp.src(sources.carouselCSS);
+        }).on("error", sass.logError))
+        //bootstrapcss = gulp.src(sources.bootstrapCSS),
+        //carouselcss = gulp.src(sources.carouselCSS);
 
-    merge(sassfile, bootstrapcss)
+    //merge(sassfile, bootstrapcss)
         .pipe(concat("main.css"))
         .pipe(gulp.dest(config.dist));
 });
@@ -58,7 +58,7 @@ gulp.task('png', () => {
 });
 
 gulp.task("js", () => {
-    gulp.src([sources.js, sources.rootJS])
+    gulp.src([sources.js, sources.rootJS, sources.carouselJS])
         .pipe(concat(sources.rootJS))
         .pipe(browsefiry())
         .pipe(rename("bundle.js"))

@@ -1,0 +1,33 @@
+.nav {
+    font-size: 1.2em;
+    i {
+        color: $primary-color;
+    }
+    img {
+        float: left;
+    }
+    &__action {
+        padding: 3em 0 0.5em 0;
+        .col-md-6:first-child {
+            display: flex;
+            justify-content: flex-start;
+            i {
+                margin-right: 0.5em;
+            }
+            a {
+                margin-right: 1em;
+            }
+            a span {
+                color: $secondary-color;
+            }
+        }
+        .col-md-6:nth-child(2) {
+            display: flex;
+            justify-content: flex-end;
+            a {
+                font-size: 1.2em;
+                margin-left: 0.5em;
+            }
+        }
+    }
+}

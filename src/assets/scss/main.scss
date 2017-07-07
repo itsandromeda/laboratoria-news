@@ -1,3 +1,22 @@
-h1 {
-    color: red;
-}
+/*
+    Proyecto final Sprint 6 - Laboratoria
+    Author: Annia J. Flores
+    Version: 0.1.0
+*/
+
+/* BASE - Base styles, variables, mixins, etc. */
+
+@import '0-base/_base.scss';
+@import '0-base/mixins.scss';
+@import '0-base/variables.scss';
+
+/* MODULES - Individual site components */
+
+@import '1-modules/_buttons.scss';
+@import '1-modules/_components.scss';
+
+/* LAYOUTS - Page layout styles */
+
+@import '2-layouts/_header.scss';
+@import '2-layouts/_nav.scss';
+@import '2-layouts/_footer.scss';

@@ -1,4 +1,4 @@
-h1{color:red}
+a:hover{text-decoration:none}.header__title{margin-top:2em}.header__title img[alt="logo"]{margin-bottom:2em}.header__title p{margin-bottom:1em}.nav{font-size:1.2em}.nav i{color:#F7B617}.nav img{float:left}.nav__action{padding:3em 0 0.5em 0}.nav__action .col-md-6:first-child{display:flex;justify-content:flex-start}.nav__action .col-md-6:first-child i{margin-right:0.5em}.nav__action .col-md-6:first-child a{margin-right:1em}.nav__action .col-md-6:first-child a span{color:#2B2B2B}.nav__action .col-md-6:nth-child(2){display:flex;justify-content:flex-end}.nav__action .col-md-6:nth-child(2) a{font-size:1.2em;margin-left:0.5em}
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)

@@ -1,0 +1,41 @@
+.main-news {
+    .container {
+        position: relative;
+        padding: 0;
+        .row {
+            margin: 0;
+        }
+        .info-box {
+            color: #fff;
+            position: absolute;
+            left: 3em;
+            bottom: 0.5em;
+            width: 75%;
+            h2 {
+                font-size: 2.5em;
+            }
+            p {
+                width: 72%;
+                font-size: 1.4em;
+            }
+        }
+    }
+    &__navbar {
+        background-color: $primary-color;
+        ul {
+            display: table;
+            width: 100%;
+            margin: 0;
+            padding: 1em;
+        }
+        li {
+            display: table-cell;
+        }
+        a {
+            color: white;
+        }
+        a:hover {
+            color: white;
+        }
+    }
+}

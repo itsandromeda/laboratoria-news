@@ -4,9 +4,10 @@
         color: $primary-color;
     }
     img {
-        float: left;
+        float:left;
     }
     &__action {
+        border-bottom: 1px solid #c3c3c3;
         padding: 3em 0 0.5em 0;
         .col-md-6:first-child {
             display: flex;

@@ -87,8 +87,10 @@ gulp.task("html-watch", ["html"], (done) => {
 
 gulp.task("serve", () => {
     browserSync.init({
-        server: {
-            baseDir: config.dist
+        port: 3007,
+        proxy: {
+            target: "localhost:3000",
+            ws: true
         }
     });
     gulp.watch(sources.html, ["html-watch"]);

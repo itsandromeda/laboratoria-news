@@ -4,6 +4,7 @@
     Version: 0.1.0
 */
 
+
 /* BASE - Base styles, variables, mixins, etc. */
 
 @import '0-base/_base.scss';
@@ -20,3 +21,4 @@
 @import '2-layouts/_header.scss';
 @import '2-layouts/_nav.scss';
 @import '2-layouts/_footer.scss';
+@import '2-layouts/_main-news.scss';

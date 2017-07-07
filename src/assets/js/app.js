@@ -5,9 +5,34 @@ const render = (root) => {
 
     wrapper.append(nav());
     wrapper.append(header());
+
+    if (settings.id === null) {
+
+        wrapper.append(mainNews(_ => {
+            render(root);
+        }));
+    } else if (settings.id === 0) {
+        wrapper.append(noticia1(_ => {
+            render(root);
+        }));
+    }
 };
 
-const settings = {};
+const settings = {
+    "id": null,
+    "author": {
+        name: null,
+        picture: null,
+        user: null
+    },
+    "body": null,
+    "brief": null,
+    "categories": [0, 0],
+    "img": null,
+    "published-date": null,
+    "title": null,
+    "type": null
+};
 
 $(_ => {
     const root = $('#root');

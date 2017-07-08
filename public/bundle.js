@@ -54,7 +54,8 @@ const mainNews = (update) => {
 
     $(_ => {
         $('.main-news').click(_ => {
-            news1({
+
+            const user = {
                 "author": {
                     name: settings.author.name,
                     picture: settings.author.picture,
@@ -67,7 +68,8 @@ const mainNews = (update) => {
                 "published-date": settings["published-date"],
                 "title": settings.title,
                 "type": settings.type
-            });
+            };
+            news1(user);
             settings.id = 0;
             update();
         });
@@ -80,16 +82,21 @@ const mainNews = (update) => {
     return container;
 };
 
-const noticia1 = (update) => {
-    const container = $('<section class="new"></section>'),
-        wrap = $('<div class="container"><h1>Noticia</h1></div>');
+const noticia1 = (titulo, update) => {
+    const container = $('<section class="news"></section>'),
+        wrap = $('<div class="container"></div>'),
+        title = $('<div class="news__article"><h1>EDUCACIÓN</h1></div>'),
+        article = $('<article class="article"></article>'),
+        head = $('<h2>' + settings.title + '</h2>');
 
     container.append(wrap);
+    wrap.append(title, article);
+    article.append(head);
     return container;
 };
 
 const news1 = (news) => {
-    $.get('/api/news/', news, (res, req) => {
+    $.get('api/news/', news, (res, req) => {
         settings.author.name = res[0].author.name;
         settings.author.picture = res[0].author.picture;
         settings.author.user = res[0].author.user;
@@ -100,7 +107,6 @@ const news1 = (news) => {
         settings["published-date"] = res[0]["published-date"];
         settings.title = res[0].title;
         settings.type = res[0].type;
-        console.log(res[0].title);
     });
 };
 
@@ -117,9 +123,9 @@ const render = (root) => {
 
     wrapper.append(nav());
     wrapper.append(header());
-
     if (settings.id === null) {
 
+        console.log(settings.title);
         wrapper.append(mainNews(_ => {
             render(root);
         }));
@@ -166,6 +172,24 @@ $(_ => {
         }
     });
 });
+
+const getJSON = (url, cb) => {
+
+    const xhr = new XMLHttpRequest();
+
+    xhr.addEventListener('load', () => {
+
+        if (xhr.status !== 200) {
+            return cb(new Error('Error loading JSON from ' + url + '(' + xhr.status + ')'));
+        }
+
+        cb(null, xhr.response);
+    });
+
+    xhr.open('GET', url);
+    xhr.responseType = 'json';
+    xhr.send();
+};
 /**
  * Owl Carousel v2.2.1
  * Copyright 2013-2017 David Deutsch

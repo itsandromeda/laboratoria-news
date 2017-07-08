@@ -6,9 +6,9 @@ const render = (root) => {
     wrapper.append(nav());
     wrapper.append(header());
     if (settings.id === null) {
-
-        console.log(settings.title);
         wrapper.append(mainNews(_ => {
+            render(root);
+        }), secNews(_ => {
             render(root);
         }));
     } else if (settings.id === 0) {

@@ -1,6 +1,28 @@
 .sec-news {
-    background: pink;
-    .row {
+    margin-bottom: 2em;
+    .container {
         padding: 0;
+    }
+    .row {
+        margin: 0;
+        .col-md-6 {
+            margin: 0;
+            padding: 0 0.5em 0 0;
+            height: 360px;
+        }
+        .col-md-3:first-child {
+            margin: 0;
+            padding: 0 0.5em 0 0;
+            height: 360px;
+        }
+        .col-md-3:last-child {
+            margin: 0;
+            padding: 0 0 0 0.5em;
+            height: 360px;
+        }
+    }
+    &__inner {
+        background-color: $secondary-color;
+        height: 360px;
     }
 }

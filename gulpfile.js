@@ -83,7 +83,7 @@ gulp.task("html-watch", ["html"], (done) => {
 
 gulp.task("serve", () => {
     browserSync.init({
-        port: 3007,
+        port: 3005,
         proxy: {
             target: "localhost:3000",
             ws: true

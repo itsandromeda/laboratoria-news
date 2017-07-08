@@ -22,7 +22,33 @@
         }
     }
     &__inner {
+        position: relative;
         background-color: $secondary-color;
         height: 360px;
+        h3 {
+            font-size: 1.3em;
+            color: #fff;
+            margin: 0;
+            margin: 1.2em 0.5em 0.5em 0.5em;
+        }
     }
+}
+
+.label {
+    background-color: $primary-color;
+    font-size: 1.5em !important;
+    color: $secondary-color !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 !important;
+    width: 75px;
+    height: 30px;
+    position: absolute;
+    bottom: 3.2em;
+    left: 2em;
+}
+
+.primary-color {
+    color: $primary-color;
 }

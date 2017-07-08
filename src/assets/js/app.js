@@ -10,6 +10,8 @@ const render = (root) => {
             render(root);
         }), secNews(_ => {
             render(root);
+        }), world(_ => {
+            render(root);
         }));
     } else if (settings.id === 0) {
         wrapper.append(noticia1(_ => {

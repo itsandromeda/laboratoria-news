@@ -149,38 +149,59 @@ const secNews = (update) => {
     return container;
 };
 const world = (update) => {
-    const container = $('<section class="sec-news"></section>'),
+    const container = $('<section class="world"></section>'),
         wrap = $('<div class="container"></div>'),
         row = $('<div class="row"></div>'),
-        secNews_info = $('<div class="sec-news__info"></div>'),
-        box_1 = $('<div class="col-md-6"></div>'),
-        box_2 = $('<div class="col-md-3"></div>'),
-        box_3 = $('<div class="col-md-3"></div>'),
-        innerbox_1 = $('<div class="sec-news__inner"></div>'),
-        innerbox_2 = $('<div class="sec-news__inner"></div>'),
-        innerbox_3 = $('<div class="sec-news__inner"></div>'),
-        news1 = $('<img class="img-responsive" src="assets/img/news-1.png" alt="news-2">'),
-        news2 = $('<img class="img-responsive" src="assets/img/news-2.png" alt="news-3">'),
-        news3 = $('<img class="img-responsive" src="assets/img/news-3.png" alt="news-4">'),
-        title1 = $('<h3>El método de la <span class="primary-color">Universidad de Stanford</span> para mejorar las calificaciones</h3>'),
-        title2 = $('<h3>Estas son las mejores <span class="primary-color">tech startups</span> del mundo</h3>'),
-        title3 = $('<h3>Voluntarios por la <span class="primary-color">educación</span>, la combinación perfecta</h3>'),
-        info = $('<p class="hidden-xs hidden-sm">Ya no será necesario ir hasta el campus de MIT para estudiar allá, por medio de su curso gratuito en línea cualquiera podrá hacerlo.</p>'),
-        label = $('<div class="label">HOY</div>');
+        mainTitle = $('<div class="world__main-title><h2>MUNDO</h2></div>'),
+        box_1 = $('<div class="col-md-2"></div>'),
+        box_2 = $('<div class="col-md-8"></div>'),
+        box_2_1 = $('<div class="col-md-4"></div>'),
+        box_2_2 = $('<div class="col-md-4"></div>'),
+        box_2_3 = $('<div class="col-md-12"></div>'),
+        box_2_4 = $('<div class="col-md-12"></div>'),
+        box_3 = $('<div class="col-md-2"></div>'),
+        innerbox_1 = $('<div class="world__inner"></div>'),
+        innerbox_2_1 = $('<div class="world__inner col-md-4"></div>'),
+        innerbox_2_2 = $('<div class="world__inner col-md-4"></div>'),
+        innerbox_2_3 = $('<div class="world__inner col-md-12"></div>'),
+        innerbox_2_4 = $('<div class="world__inner col-md-12"></div>'),
+        innerbox_3 = $('<div class="world__inner"></div>'),
+        news1 = $('<img class="img-responsive" src="assets/img/news-4.png" alt="news-2">'),
+        news2 = $('<img class="img-responsive" src="assets/img/news-5.png" alt="news-5">'),
+        news3 = $('<img class="img-responsive" src="assets/img/news-6.png" alt="news-6">'),
+        news4 = $('<img class="img-responsive" src="assets/img/news-7.png" alt="news-7">'),
+        news5 = $('<img class="img-responsive" src="assets/img/news-8.png" alt="news-8">'),
+        news6 = $('<img class="img-responsive" src="assets/img/news-9.png" alt="news-9">'),
+        title1 = $('<p class="primary-color">Titulo noticia</p><p>laboratoria</p>'),
+        title2 = $('<p class="primary-color">Titulo noticia</p><p>laboratoria</p>'),
+        title3 = $('<p>Titulo noticia</p><p>laboratoria</p>'),
+        title4 = $('<p>Titulo noticia laboratoria</p><p>newspaper</p>'),
+        title5 = $('<p><span class="primary-color">Titulo</span> noticia laboratoria</p><p>newspaper</p>'),
+        title6 = $('<p>Titulo noticia</p><p>laboratoria</p>'),
+        label1 = $('<div class="label">HOY</div>'),
+        label2 = $('<div class="label">HOY</div>');
 
     container.append(wrap);
+    wrap.append(mainTitle);
     wrap.append(row);
-    box_1.append(innerbox_1, label);
-    box_2.append(innerbox_2);
+    box_1.append(innerbox_1, label1);
+    box_2_1.append(innerbox_2_1);
+    box_2_2.append(innerbox_2_2);
+    box_2_3.append(innerbox_2_3);
+    box_2_4.append(innerbox_2_4);
+    box_2.append(box_2_1, box_2_2, box_2_3, box_2_4);
     box_3.append(innerbox_3);
     innerbox_1.append(news1, title1);
-    innerbox_2.append(news2, title2);
-    innerbox_3.append(news3, title3);
+    box_2_1.append(news2);
+    box_2_2.append(news3);
+    box_2_3.append(news4);
+    box_2_4.append(news5);
+    innerbox_3.append(news3, title6);
     row.append(box_1, box_2, box_3);
 
     $(_ => {
         $('.sec-news').click(_ => {
-            settings.id = 1;
+            settings.id = 2;
             update();
         });
     });
